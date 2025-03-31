@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Game {
+    public static void main(String[] args) {
+        String input;
+        Boolean exit = false;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Welcome to Thorn and Ashes");
+        System.out.println("This is a Multiple Choice Text-Based Adventure game.");
+        System.out.println("Rules of The Game: Some of The Story is set and Cannot be Altered, and Some is up to the Player.");
+        System.out.println("You Will be Given a Prompt Via Text and Presented With 4 Options.");
+        System.out.println("To Play, Enter 'Play' and To Exit The Game Type 'Exit'.");
+
+        while (!exit) {
+            input = sc.nextLine();
+
+            if (input.equalsIgnoreCase("Exit")) {
+                exit = true;
+                System.out.println("Thank you for playing. Goodbye!");
+                break;
+            }
+
+
+            if (input.equalsIgnoreCase("Play")) {
+                System.out.println("You awaken to the damp, musty scent of stone. Your head aches, and the faint echo of dripping water surrounds you.");
+                System.out.println("The faint glow of distant light flickers in the shadows, revealing jagged rock walls. You’re trapped, What Do You Do?");
+                System.out.println("1. Look around");
+                System.out.println("2. Try to stand up");
+
+                input = sc.nextLine();
+                if (input.equals("look around")) {
+                    System.out.println("You notice that you are shackled to the wall by your right hand, but you can see a key across the room.");
+                    System.out.println("You can see a branch next to you. What do you do?");
+                    System.out.println("1. Use the branch to get the key");
+                    System.out.println("2. Try to get the key without the branch");
+                }
+                if (input.equals("try to stand up")) {
+                    System.out.println("You notice that you are shackled to the wall by your right hand, but you can see a key across the room.");
+                    System.out.println("You can see a branch next to you. What do you do?");
+                    System.out.println("1. Use the branch to get the key");
+                    System.out.println("2. Try to get the key without the branch");
+
+//this is the section that doesnt output currectly
+
+                    String choice = sc.nextLine(); 
+                    if (choice.equals("1")) {
+                        System.out.println("You successfully get the key and free yourself!");
+                    } else if (choice.equals("2")) {
+                        System.out.println("You cannot reach the key. You need to find a way to use the branch.");
+                    } else {
+                        System.out.println("Invalid option. Try again.");
+//
+                    }
+                }
+            } else {
+                System.out.println("Invalid input. Type 'Play' to start or 'Exit' to quit.");
+            }
+        }}}
